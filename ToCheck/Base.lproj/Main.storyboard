@@ -31,7 +31,13 @@
                             <outlet property="delegate" destination="BMA-AG-02s" id="c6h-tQ-f7C"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Check   𝕮✓𝕯   Do" largeTitleDisplayMode="always" id="iBu-dj-u7C"/>
+                    <navigationItem key="navigationItem" title="Check   𝕮✓𝕯   Do" largeTitleDisplayMode="always" id="iBu-dj-u7C">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oNf-RR-sfV">
+                            <connections>
+                                <action selector="addButtonpressed:" destination="BMA-AG-02s" id="Zm2-oB-0Zx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SKR-cq-22k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

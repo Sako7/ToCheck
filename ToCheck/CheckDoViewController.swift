@@ -10,7 +10,7 @@ import UIKit
 
 class CheckDoViewController: UITableViewController {
 
-    let itemArray = ["Kill myself", "Get my teacher to be stupid", "be dumb"]
+    var itemArray = ["Kill myself", "Get my teacher to be stupid", "be dumb"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,5 +53,35 @@ class CheckDoViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
-}
+    
+    //MARK - Add new items
+
+    @IBAction func addButtonpressed(_ sender: UIBarButtonItem) {
+        
+        var textField = UITextField()
+        
+        let alert = UIAlertController(title: "Add new CheckDo item", message: "", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
+            //What Will happen when You Press AddItem
+            
+            self.itemArray.append(textField.text!)
+            
+            self.tableView.reloadData()
+        }
+        
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Create new item"
+            textField = alertTextField
+        }
+        
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
+        
+        }
+        
+    }
+
+
 
