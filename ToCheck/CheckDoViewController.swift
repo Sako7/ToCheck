@@ -12,9 +12,20 @@ class CheckDoViewController: UITableViewController {
 
     var itemArray = ["Kill myself", "Get my teacher to be stupid", "be dumb"]
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
+            itemArray = items
+            
+            
+        }
+        
+        
+        
+        
     }
 
     //MARK - Tableview Datasource Methods
@@ -67,6 +78,8 @@ class CheckDoViewController: UITableViewController {
             
             self.itemArray.append(textField.text!)
             
+            self.defaults.setValue(self.itemArray, forKey: "TodoListArray")
+            
             self.tableView.reloadData()
         }
         
@@ -82,6 +95,7 @@ class CheckDoViewController: UITableViewController {
         }
         
     }
+
 
 
 

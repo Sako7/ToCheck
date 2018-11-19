@@ -33,6 +33,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Check   𝕮✓𝕯   Do" largeTitleDisplayMode="always" id="iBu-dj-u7C">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="oNf-RR-sfV">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="addButtonpressed:" destination="BMA-AG-02s" id="Zm2-oB-0Zx"/>
                             </connections>
