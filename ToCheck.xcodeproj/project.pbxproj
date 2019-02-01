@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DBC0279220256A900DFBFC2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DBC0278220256A900DFBFC2 /* Default-568h@2x.png */; };
+		4DDCC9F621C47BA300B2D7D8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDCC9F521C47BA300B2D7D8 /* Item.swift */; };
 		4DE8BC76219DC37E00BE26FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8BC75219DC37E00BE26FB /* AppDelegate.swift */; };
 		4DE8BC78219DC37E00BE26FB /* CheckDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE8BC77219DC37E00BE26FB /* CheckDoViewController.swift */; };
 		4DE8BC7B219DC37E00BE26FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DE8BC79219DC37E00BE26FB /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4DBC0278220256A900DFBFC2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4DDCC9F521C47BA300B2D7D8 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		4DE8BC72219DC37D00BE26FB /* ToCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DE8BC75219DC37E00BE26FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DE8BC77219DC37E00BE26FB /* CheckDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDoViewController.swift; sourceTree = "<group>"; };
@@ -35,11 +39,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DDCC9F721C47BAD00B2D7D8 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				4DDCC9F521C47BA300B2D7D8 /* Item.swift */,
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
+		4DDCC9F821C47BCB00B2D7D8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4DE8BC77219DC37E00BE26FB /* CheckDoViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4DDCC9FA21C47BE900B2D7D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4DE8BC7E219DC38000BE26FB /* LaunchScreen.storyboard */,
+				4DE8BC79219DC37E00BE26FB /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4DDCC9FB21C47C1100B2D7D8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4DE8BC7C219DC38000BE26FB /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		4DE8BC69219DC37D00BE26FB = {
 			isa = PBXGroup;
 			children = (
+				4DBC0278220256A900DFBFC2 /* Default-568h@2x.png */,
 				4DE8BC74219DC37D00BE26FB /* ToCheck */,
 				4DE8BC73219DC37D00BE26FB /* Products */,
+				4DE8BC81219DC38000BE26FB /* Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,11 +94,10 @@
 			isa = PBXGroup;
 			children = (
 				4DE8BC75219DC37E00BE26FB /* AppDelegate.swift */,
-				4DE8BC77219DC37E00BE26FB /* CheckDoViewController.swift */,
-				4DE8BC79219DC37E00BE26FB /* Main.storyboard */,
-				4DE8BC7C219DC38000BE26FB /* Assets.xcassets */,
-				4DE8BC7E219DC38000BE26FB /* LaunchScreen.storyboard */,
-				4DE8BC81219DC38000BE26FB /* Info.plist */,
+				4DDCC9F721C47BAD00B2D7D8 /* Data Models */,
+				4DDCC9F821C47BCB00B2D7D8 /* Controller */,
+				4DDCC9FA21C47BE900B2D7D8 /* View */,
+				4DDCC9FB21C47C1100B2D7D8 /* Supporting Files */,
 			);
 			path = ToCheck;
 			sourceTree = "<group>";
@@ -123,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DE8BC80219DC38000BE26FB /* LaunchScreen.storyboard in Resources */,
+				4DBC0279220256A900DFBFC2 /* Default-568h@2x.png in Resources */,
 				4DE8BC7D219DC38000BE26FB /* Assets.xcassets in Resources */,
 				4DE8BC7B219DC37E00BE26FB /* Main.storyboard in Resources */,
 			);
@@ -136,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DE8BC78219DC37E00BE26FB /* CheckDoViewController.swift in Sources */,
+				4DDCC9F621C47BA300B2D7D8 /* Item.swift in Sources */,
 				4DE8BC76219DC37E00BE26FB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,7 +324,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LX5G45MDC9;
-				INFOPLIST_FILE = ToCheck/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +343,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LX5G45MDC9;
-				INFOPLIST_FILE = ToCheck/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
