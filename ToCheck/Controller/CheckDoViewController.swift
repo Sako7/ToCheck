@@ -11,7 +11,7 @@ import UIKit
 class CheckDoViewController: UITableViewController {
 
     var itemArray = [Item]()
-    
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
@@ -21,11 +21,8 @@ class CheckDoViewController: UITableViewController {
         newItem.Title = "lolloloolololo"
         itemArray.append(newItem)
         // Do any additional setup after loading the view, typically from a nib.
-      if let items = defaults.array(forKey: "TodoListArray") as? [Item] {
-            itemArray = items
-        }
-        
-        
+
+loadItems()
         
         
     }
@@ -61,13 +58,12 @@ class CheckDoViewController: UITableViewController {
         
         itemArray[indexPath.row].Done = !itemArray[indexPath.row].Done
         
-        tableView.reloadData()
+
         
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
     
-    //MARK - Add new items
 
     @IBAction func addButtonpressed(_ sender: UIBarButtonItem) {
         
@@ -83,10 +79,13 @@ class CheckDoViewController: UITableViewController {
             
             self.itemArray.append(newItem)
             
-            self.defaults.setValue(self.itemArray, forKey: "TodoListArray")
-            
-            self.tableView.reloadData()
+            self.saveItems()
         }
+        
+            
+            
+            
+
         
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "Create new item"
@@ -98,8 +97,34 @@ class CheckDoViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
         
         }
+    
+    func saveItems() {
+        
+        do {
+            let encoder = PropertyListEncoder()
+            let data = try encoder.encode(itemArray)
+            try data.write(to: dataFilePath!)
+        } catch {
+            print("ERROR ERROR!!! SIR THIS IS THE ERROR: \(error)")
+    
+        }
+        self.tableView.reloadData()
+        
         
     }
+    func loadItems() {
+        if let data = try? Data(contentsOf: dataFilePath!) {
+            let decoder = PropertyListDecoder()
+            do {
+            itemArray = try decoder.decode([Item].self, from: data)
+            }catch {
+                
+            }
+        }
+        
+    }
+    }
+
 
 
 
